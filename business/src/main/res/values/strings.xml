@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Core</string>
+    <string name="app_name">Bussiness</string>
     <string name="member_account_title">账号：</string>
     <string name="member_pwd_title">密码：</string>
     <string name="member_login">登陆</string>

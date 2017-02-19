@@ -1,4 +1,4 @@
-package com.yichenapp.core;
+package com.yichenapp.bussiness;
 
 import org.junit.Test;
 

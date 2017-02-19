@@ -5,6 +5,7 @@ import com.yichenapp.core.utils.TraceLog;
 
 import cn.bmob.v3.BmobUser;
 import cn.bmob.v3.exception.BmobException;
+import cn.bmob.v3.listener.LogInListener;
 import cn.bmob.v3.listener.SaveListener;
 
 /**
@@ -39,22 +40,15 @@ public class LoginUtils {
         });
     }
 
-    public static void login(String name,String pwd){
+    public static void login(String name,String pwd,LogInListener<UserInfo> listener) {
         BmobUser bu2 = new BmobUser();
         bu2.setUsername(name);
         bu2.setPassword(pwd);
-        bu2.login(new SaveListener<BmobUser>() {
-
-            @Override
-            public void done(BmobUser bmobUser, BmobException e) {
-                if(e==null){
-                    TraceLog.i("登录成功:");
-                    //通过BmobUser user = BmobUser.getCurrentUser()获取登录成功后的本地用户信息
-                    //如果是自定义用户对象MyUser，可通过MyUser user = BmobUser.getCurrentUser(MyUser.class)获取自定义用户信息
-                }else{
-                    TraceLog.e(e.getMessage());
-                }
-            }
-        });
+        bu2.loginByAccount(name, pwd, listener);
     }
+
+    public static UserInfo getCurrentUserInfo(){
+        return UserInfo.getCurrentUser(UserInfo.class);
+    }
+
 }

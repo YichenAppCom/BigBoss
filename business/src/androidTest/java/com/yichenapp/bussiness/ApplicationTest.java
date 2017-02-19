@@ -1,4 +1,4 @@
-package com.yichenapp.core;
+package com.yichenapp.bussiness;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

@@ -2,10 +2,12 @@ package com.yichenapp.bigboss;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 import com.yichenapp.apisdk.login.LoginUtils;
+import com.yichenapp.bussiness.member.SigninActivity;
 import com.yichenapp.core.utils.TraceLog;
 
 import butterknife.BindView;
@@ -18,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.startregister)
     Button startregister;
     @BindView(R.id.login)
-    TextView login;
+    Button login;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,14 +50,14 @@ public class MainActivity extends AppCompatActivity {
 
 
     @OnClick({R.id.startregister,R.id.login})
-    public void onClick() {
-        TraceLog.i();
-
-        register();
-    }
-
-    private void register() {
-        LoginUtils.register("qatest_super", "boss123", "joyfulmath@163.com", "12", true);
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.startregister:
+                break;
+            case R.id.login:
+                SigninActivity.navigataToSignIn(MainActivity.this);
+                break;
+        }
     }
 
 }

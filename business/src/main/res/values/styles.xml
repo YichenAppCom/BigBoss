@@ -1,0 +1,10 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="member_title_textStyle" >
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">14sp</item>
+
+    </style>
+
+</resources>
