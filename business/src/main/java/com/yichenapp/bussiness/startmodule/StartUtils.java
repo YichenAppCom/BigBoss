@@ -3,6 +3,7 @@ package com.yichenapp.bussiness.startmodule;
 import com.yichenapp.apisdk.data.UserInfo;
 import com.yichenapp.apisdk.login.LoginUtils;
 import com.yichenapp.core.utils.SharePreferencesHelper;
+import com.yichenapp.core.utils.TraceLog;
 
 import java.util.List;
 
@@ -49,8 +50,10 @@ public class StartUtils {
             @Override
             public void done(List<UserInfo> object, BmobException e) {
                 if(e==null && object.size()>0){
+                    TraceLog.i("get online user");
                     SharePreferencesHelper.saveObject(UserInfo.class.getName(),object.get(0));
                 }else{
+                    TraceLog.i("get current user");
                    SharePreferencesHelper.saveObject(UserInfo.class.getName(),LoginUtils.getCurrentUserInfo());
                 }
                 if(listener!=null){

@@ -5,4 +5,13 @@
         <item name="android:windowNoTitle">true</item>
     </style>
 
+    <style name="member_title_textStyle" >
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+    <style name="main_nickname_style" >
+        <item name="android:textColor">#FFD1C119</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:background">#00000000</item>
+    </style>
 </resources>

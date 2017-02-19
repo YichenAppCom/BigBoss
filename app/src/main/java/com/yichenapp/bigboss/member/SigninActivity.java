@@ -1,17 +1,17 @@
-package com.yichenapp.bussiness.member;
+package com.yichenapp.bigboss.member;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
 import com.yichenapp.apisdk.data.UserInfo;
 import com.yichenapp.apisdk.login.LoginUtils;
-import com.yichenapp.bussiness.R;
+import com.yichenapp.bigboss.R;
+import com.yichenapp.bussiness.BaseActivity;
 import com.yichenapp.core.utils.TraceLog;
 
 import cn.bmob.v3.exception.BmobException;
@@ -21,7 +21,7 @@ import cn.bmob.v3.listener.LogInListener;
 /**
  * Created by Administrator on 2017/2/19 0019.
  */
-public class SigninActivity extends AppCompatActivity implements View.OnClickListener {
+public class SigninActivity extends BaseActivity implements View.OnClickListener {
 
     EditText accountEdit;
     EditText pwdEdit;
@@ -56,7 +56,7 @@ public class SigninActivity extends AppCompatActivity implements View.OnClickLis
                 }
             });
         }else if(R.id.register_button == view.getId()){
-            TraceLog.i();
+            RegisterActivity.navigateToSelf(this);
         }
     }
 

@@ -7,7 +7,7 @@ import android.widget.TextView;
 
 import com.yichenapp.apisdk.data.UserInfo;
 import com.yichenapp.apisdk.login.LoginUtils;
-import com.yichenapp.bussiness.member.SigninActivity;
+import com.yichenapp.bigboss.member.SigninActivity;
 import com.yichenapp.bussiness.startmodule.StartUtils;
 import com.yichenapp.core.utils.SharePreferencesHelper;
 
@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
     @OnClick(R.id.account_name)
     public void onClick() {
         if(LoginUtils.isLogin()){
-
+            SigninActivity.navigataToSignIn(MainActivity.this);
         }else{
             SigninActivity.navigataToSignIn(MainActivity.this);
         }

@@ -1,5 +1,7 @@
 package com.yichenapp.apisdk.login;
 
+import android.support.annotation.NonNull;
+
 import com.yichenapp.apisdk.data.UserInfo;
 import com.yichenapp.core.utils.SharePreferencesHelper;
 import com.yichenapp.core.utils.TraceLog;
@@ -22,23 +24,21 @@ public class LoginUtils {
      * @param age       age ,using string
      * @param sex       set,true male,false female
      */
-    public static void register(String name,String pwd,String email,String age,boolean sex){
+    public static void register(@NonNull String name,
+                                @NonNull String pwd,
+                                @NonNull String nickName,
+                                String email,
+                                String age,
+                                boolean sex,
+                                SaveListener<UserInfo> listener){
         UserInfo bu = new UserInfo();
         bu.setUsername(name);
+        bu.setNickname(nickName);
         bu.setAge(age);
         bu.setPassword(pwd);
         bu.setEmail(email);
         bu.setSex(sex);
-        bu.signUp(new SaveListener<UserInfo>() {
-            @Override
-            public void done(UserInfo userInfo, BmobException e) {
-                if(e == null){
-                    TraceLog.i("success");
-                }else{
-                    TraceLog.i("e:"+e.getMessage());
-                }
-            }
-        });
+        bu.signUp(listener);
     }
 
     public static void login(String name,String pwd,LogInListener<UserInfo> listener) {
