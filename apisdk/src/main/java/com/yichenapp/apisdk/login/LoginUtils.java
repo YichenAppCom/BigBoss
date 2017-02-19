@@ -1,6 +1,7 @@
 package com.yichenapp.apisdk.login;
 
 import com.yichenapp.apisdk.data.UserInfo;
+import com.yichenapp.core.utils.SharePreferencesHelper;
 import com.yichenapp.core.utils.TraceLog;
 
 import cn.bmob.v3.BmobUser;
@@ -49,6 +50,16 @@ public class LoginUtils {
 
     public static UserInfo getCurrentUserInfo(){
         return UserInfo.getCurrentUser(UserInfo.class);
+    }
+
+    public static boolean isLogin(){
+        UserInfo userInfo = getCurrentUserInfo();
+        return (userInfo!=null);
+    }
+
+    public static void logout(){
+        UserInfo.logOut();
+        SharePreferencesHelper.removeByKey(UserInfo.class.getName());
     }
 
 }

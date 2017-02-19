@@ -9,18 +9,10 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.yichenapp.bigboss.MainActivity">
 
-
-    <Button
-        android:id="@+id/startregister"
+    <TextView
+        android:id="@+id/account_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="register"
-        />
-
-    <Button
-        android:layout_centerInParent="true"
-        android:id="@+id/login"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="login"/>
+        style="@style/main_nickname_style"
+        android:text="@string/member_login"/>
 </RelativeLayout>
