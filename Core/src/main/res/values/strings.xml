@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">Core</string>
-    <string name="member_account_title">账号：</string>
-    <string name="member_pwd_title">密码：</string>
-    <string name="member_login">登陆</string>
-    <string name="member_register">注册</string>
-    <string name="member_account_hint">请输入邮箱地址，以便找回密码</string>
+    <!--<string name="member_account_title">账号：</string>-->
+    <!--<string name="member_pwd_title">密码：</string>-->
+    <!--<string name="member_login">登陆</string>-->
+    <!--<string name="member_register">注册</string>-->
+    <!--<string name="member_account_hint">请输入邮箱地址，以便找回密码</string>-->
 </resources>

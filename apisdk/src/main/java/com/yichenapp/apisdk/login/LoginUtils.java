@@ -2,6 +2,7 @@ package com.yichenapp.apisdk.login;
 
 import android.support.annotation.NonNull;
 
+import com.yichenapp.apisdk.data.ExtraUser;
 import com.yichenapp.apisdk.data.UserInfo;
 import com.yichenapp.core.utils.SharePreferencesHelper;
 import com.yichenapp.core.utils.TraceLog;
@@ -39,6 +40,25 @@ public class LoginUtils {
         bu.setEmail(email);
         bu.setSex(sex);
         bu.signUp(listener);
+    }
+
+    public static void createUserExtras(UserInfo bu) {
+        ExtraUser extraUser = new ExtraUser();
+        extraUser.setType_a(2147483647);
+        extraUser.setType_b(5);
+        extraUser.setType_c(1);
+        extraUser.setUser(bu);
+        extraUser.save(new SaveListener<String>() {
+            @Override
+            public void done(String objectId, BmobException e) {
+                TraceLog.i("objectId:"+objectId);
+                if(e == null){
+                    TraceLog.i("success");
+                }else{
+                    TraceLog.w(e.getMessage());
+                }
+            }
+        });
     }
 
     public static void login(String name,String pwd,LogInListener<UserInfo> listener) {

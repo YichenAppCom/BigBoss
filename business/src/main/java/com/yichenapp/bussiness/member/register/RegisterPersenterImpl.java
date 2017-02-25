@@ -1,10 +1,13 @@
 package com.yichenapp.bussiness.member.register;
 
+import android.text.TextUtils;
+
 import com.yichenapp.apisdk.data.UserInfo;
 import com.yichenapp.apisdk.login.LoginUtils;
 import com.yichenapp.core.utils.SharePreferencesHelper;
 import com.yichenapp.core.utils.TraceLog;
 
+import cn.bmob.push.lib.util.LogUtil;
 import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.SaveListener;
 
@@ -19,6 +22,8 @@ public class RegisterPersenterImpl {
     }
 
     private void register(SaveListener<UserInfo> listener){
+
+
         LoginUtils.register(
                 view.getAccountName(),
                 view.getPwd(),
@@ -37,6 +42,7 @@ public class RegisterPersenterImpl {
             public void done(UserInfo userInfo, BmobException e) {
                 view.dismissLoading();
                 if(e == null){
+                    LoginUtils.createUserExtras(userInfo);
                     SharePreferencesHelper.saveObject(UserInfo.class.getName(),userInfo);
                     view.onComplete();
                 }else{

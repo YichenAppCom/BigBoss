@@ -53,7 +53,7 @@
             android:id="@+id/nick_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/member_pwd_title"/>
+            android:text="@string/member_nick_title"/>
         <EditText
             android:id="@+id/nick_edit"
             android:layout_width="0dp"
