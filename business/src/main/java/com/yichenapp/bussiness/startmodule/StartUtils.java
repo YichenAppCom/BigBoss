@@ -2,6 +2,7 @@ package com.yichenapp.bussiness.startmodule;
 
 import com.yichenapp.apisdk.data.UserInfo;
 import com.yichenapp.apisdk.login.LoginUtils;
+import com.yichenapp.bussiness.scores_props.PropsContent;
 import com.yichenapp.core.utils.SharePreferencesHelper;
 import com.yichenapp.core.utils.TraceLog;
 
@@ -30,7 +31,13 @@ public class StartUtils {
     public void start(startUtilListener listener){
         this.listener = listener;
         autoLogin();
+        initProps();
     }
+
+    private void initProps() {
+        PropsContent.initProps();
+    }
+
     public void autoLogin(){
         UserInfo userInfo = LoginUtils.getCurrentUserInfo();
         if(userInfo!=null){
