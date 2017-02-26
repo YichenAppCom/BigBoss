@@ -1,7 +1,10 @@
 package com.yichenapp.bussiness.startmodule;
 
+import com.yichenapp.apisdk.data.Props;
 import com.yichenapp.apisdk.data.UserInfo;
-import com.yichenapp.apisdk.login.LoginUtils;
+import com.yichenapp.apisdk.data.VipLevel;
+import com.yichenapp.apisdk.utils.LoginUtils;
+import com.yichenapp.apisdk.utils.PropUtils;
 import com.yichenapp.bussiness.scores_props.PropsContent;
 import com.yichenapp.core.utils.SharePreferencesHelper;
 import com.yichenapp.core.utils.TraceLog;
@@ -15,7 +18,7 @@ import cn.bmob.v3.listener.FindListener;
 /**
  * Created by Administrator on 2017/2/19 0019.
  */
-public class StartUtils {
+public class StartUtils implements PropUtils.PropResult {
 
     private static StartUtils  sInstance = null;
     private startUtilListener listener;
@@ -29,13 +32,14 @@ public class StartUtils {
     }
 
     public void start(startUtilListener listener){
+        TraceLog.i();
         this.listener = listener;
         autoLogin();
         initProps();
     }
 
     private void initProps() {
-        PropsContent.initProps();
+        PropUtils.getAllProps(this);
     }
 
     public void autoLogin(){
@@ -53,6 +57,7 @@ public class StartUtils {
     private void queryUser(String username) {
         BmobQuery<UserInfo> query = new BmobQuery<UserInfo>();
         query.addWhereEqualTo("username", username);
+        query.include("viplevel");
         query.findObjects(new FindListener<UserInfo>() {
             @Override
             public void done(List<UserInfo> object, BmobException e) {
@@ -68,6 +73,25 @@ public class StartUtils {
                 }
             }
         });
+    }
+
+    @Override
+    public void onFindProps(List<Props> list) {
+        if(list!=null && list.size()>0){
+            PropUtils.getAllVipLevels(this);
+        }else{
+            onFail();
+        }
+    }
+
+    @Override
+    public void onGetVipLevelConfig(List<VipLevel> list) {
+
+    }
+
+    @Override
+    public void onFail() {
+
     }
 
     public interface startUtilListener{

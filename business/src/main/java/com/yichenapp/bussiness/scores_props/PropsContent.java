@@ -1,7 +1,7 @@
 package com.yichenapp.bussiness.scores_props;
 
 import com.yichenapp.apisdk.data.Props;
-import com.yichenapp.apisdk.proptools.PropUtils;
+import com.yichenapp.apisdk.utils.PropUtils;
 import com.yichenapp.core.utils.TraceLog;
 
 import java.util.ArrayList;
@@ -15,17 +15,7 @@ public class PropsContent {
     private static List<Props> mPropList = new ArrayList<>();
     public static void initProps(){
         TraceLog.i();
-        PropUtils.getAllProps(new PropUtils.PropResult() {
-            @Override
-            public void onFind(List<Props> list) {
-                onFindProps(list);
-            }
-
-            @Override
-            public void onFail() {
-                mPropList.clear();
-            }
-        });
+        mPropList.clear();
     }
 
     private static void onFindProps(List<Props> list) {

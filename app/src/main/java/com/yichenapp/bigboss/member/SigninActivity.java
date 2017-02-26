@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.yichenapp.apisdk.data.UserInfo;
-import com.yichenapp.apisdk.login.LoginUtils;
+import com.yichenapp.apisdk.utils.LoginUtils;
 import com.yichenapp.bigboss.R;
 import com.yichenapp.bussiness.BaseActivity;
 import com.yichenapp.core.utils.TraceLog;

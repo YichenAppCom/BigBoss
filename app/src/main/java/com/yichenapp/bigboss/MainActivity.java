@@ -6,7 +6,7 @@ import android.text.TextUtils;
 import android.widget.TextView;
 
 import com.yichenapp.apisdk.data.UserInfo;
-import com.yichenapp.apisdk.login.LoginUtils;
+import com.yichenapp.apisdk.utils.LoginUtils;
 import com.yichenapp.bigboss.member.SigninActivity;
 import com.yichenapp.bussiness.startmodule.StartUtils;
 import com.yichenapp.core.utils.SharePreferencesHelper;

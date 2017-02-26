@@ -1,13 +1,10 @@
 package com.yichenapp.bussiness.member.register;
 
-import android.text.TextUtils;
-
 import com.yichenapp.apisdk.data.UserInfo;
-import com.yichenapp.apisdk.login.LoginUtils;
+import com.yichenapp.apisdk.utils.LoginUtils;
 import com.yichenapp.core.utils.SharePreferencesHelper;
 import com.yichenapp.core.utils.TraceLog;
 
-import cn.bmob.push.lib.util.LogUtil;
 import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.SaveListener;
 

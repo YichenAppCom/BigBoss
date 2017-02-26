@@ -37,4 +37,13 @@ public class UserInfo extends BmobUser
 
     private String nickname;
 
+    private VipLevel vipLevel;
+
+    public VipLevel getVipLevel() {
+        return vipLevel;
+    }
+
+    public void setVipLevel(VipLevel vipLevel) {
+        this.vipLevel = vipLevel;
+    }
 }
