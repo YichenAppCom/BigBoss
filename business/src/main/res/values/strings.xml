@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Bussiness</string>
-
+    <string name="member_account_length_wrong">账号长度至少6位</string>
+    <string name="member_pwd_length_wrong">密码长度至少4位</string>
 </resources>

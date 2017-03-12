@@ -11,7 +11,7 @@ import android.widget.EditText;
 import com.yichenapp.apisdk.data.UserInfo;
 import com.yichenapp.apisdk.utils.LoginUtils;
 import com.yichenapp.bigboss.R;
-import com.yichenapp.bussiness.BaseActivity;
+import com.yichenapp.bussiness.base.BaseActivity;
 import com.yichenapp.core.utils.TraceLog;
 
 import cn.bmob.v3.exception.BmobException;
@@ -21,7 +21,7 @@ import cn.bmob.v3.listener.LogInListener;
 /**
  * Created by Administrator on 2017/2/19 0019.
  */
-public class SigninActivity extends BaseActivity implements View.OnClickListener {
+public class LoginActivity extends BaseActivity implements View.OnClickListener {
 
     EditText accountEdit;
     EditText pwdEdit;
@@ -56,12 +56,12 @@ public class SigninActivity extends BaseActivity implements View.OnClickListener
                 }
             });
         }else if(R.id.register_button == view.getId()){
-            RegisterActivity.navigateToSelf(this);
+            RegisterActivity.gotoSelf(this);
         }
     }
 
-    public static void navigataToSignIn(Activity context){
-        Intent intent = new Intent(context,SigninActivity.class);
+    public static void gotoSelf(Activity context){
+        Intent intent = new Intent(context,LoginActivity.class);
         context.startActivity(intent);
     }
 }

@@ -25,24 +25,15 @@ public class LoginUtils {
     /**
      * @param name  username
      * @param pwd   password
-     * @param email email
-     * @param age   age ,using string
-     * @param sex   set,true male,false female
      */
     public static void register(@NonNull String name,
                                 @NonNull String pwd,
                                 @NonNull String nickName,
-                                String email,
-                                String age,
-                                boolean sex,
                                 SaveListener<UserInfo> listener) {
         UserInfo bu = new UserInfo();
         bu.setUsername(name);
         bu.setNickname(nickName);
-        bu.setAge(age);
         bu.setPassword(pwd);
-        bu.setEmail(email);
-        bu.setSex(sex);
         bu.signUp(listener);
     }
 
