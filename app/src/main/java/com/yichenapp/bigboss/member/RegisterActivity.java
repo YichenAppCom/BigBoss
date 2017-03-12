@@ -21,7 +21,7 @@ import cn.bmob.v3.exception.BmobException;
 /**
  * Created by Administrator on 2017/2/19 0019.
  */
-public class RegisterActivity extends BaseActivity implements IRegisterView{
+public class RegisterActivity extends BaseActivity implements IRegisterView {
     @BindView(R.id.account_edit)
     EditText accountEdit;
     @BindView(R.id.pwd_edit)
@@ -31,6 +31,8 @@ public class RegisterActivity extends BaseActivity implements IRegisterView{
     @BindView(R.id.register_button)
     Button registerButton;
 
+    @BindView(R.id.email_edit)
+    EditText emailEdit;
     RegisterPresenterImpl registerPresenter;
 
     @Override
@@ -38,7 +40,7 @@ public class RegisterActivity extends BaseActivity implements IRegisterView{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
         ButterKnife.bind(this);
-        registerPresenter = new RegisterPresenterImpl(getApplicationContext(),this);
+        registerPresenter = new RegisterPresenterImpl(getApplicationContext(), this);
     }
 
     @OnClick(R.id.register_button)
@@ -68,12 +70,16 @@ public class RegisterActivity extends BaseActivity implements IRegisterView{
 
     @Override
     public String getNickName() {
-        if(TextUtils.isEmpty(nickEdit.getText().toString()))
-        {
+        if (TextUtils.isEmpty(nickEdit.getText().toString())) {
             return getAccountName();
         }
 
         return nickEdit.getText().toString();
+    }
+
+    @Override
+    public String getEmail() {
+        return emailEdit.getText().toString();
     }
 
     @Override
@@ -87,8 +93,8 @@ public class RegisterActivity extends BaseActivity implements IRegisterView{
         showException(e);
     }
 
-    public static void gotoSelf(Activity context){
-        Intent intent = new Intent(context,RegisterActivity.class);
+    public static void gotoSelf(Activity context) {
+        Intent intent = new Intent(context, RegisterActivity.class);
         context.startActivity(intent);
     }
 }

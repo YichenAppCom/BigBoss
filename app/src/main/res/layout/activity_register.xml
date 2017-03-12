@@ -42,27 +42,47 @@
         android:inputType="textVisiblePassword"/>
     </LinearLayout>
     <LinearLayout
+    android:layout_marginTop="@dimen/member_account_margintop"
+    android:layout_below="@+id/ln_pwd"
+    android:id="@+id/ln_nick"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+    <TextView
+        style="@style/member_title_textStyle"
+        android:id="@+id/nick_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/member_nick_title"/>
+    <EditText
+        android:id="@+id/nick_edit"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:inputType="text"/>
+    </LinearLayout>
+    <LinearLayout
         android:layout_marginTop="@dimen/member_account_margintop"
-        android:layout_below="@+id/ln_pwd"
-        android:id="@+id/ln_nick"
+        android:layout_below="@+id/ln_nick"
+        android:id="@+id/ln_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
         <TextView
             style="@style/member_title_textStyle"
-            android:id="@+id/nick_title"
+            android:id="@+id/email_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/member_nick_title"/>
+            android:text="@string/member_email_title"/>
         <EditText
-            android:id="@+id/nick_edit"
+            android:id="@+id/email_edit"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
             android:inputType="text"/>
     </LinearLayout>
     <Button
-        android:layout_below="@+id/ln_nick"
+        android:layout_below="@+id/ln_email"
         android:layout_marginTop="@dimen/member_account_margintop"
         android:id="@+id/register_button"
         android:layout_width="100dp"

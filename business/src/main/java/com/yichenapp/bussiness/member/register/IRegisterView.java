@@ -11,6 +11,7 @@ public interface IRegisterView {
     String getAccountName();
     String getPwd();
     String getNickName();
+    String getEmail();
     void onComplete();
     void onError(BmobException e);
     void showToast(String msg);
