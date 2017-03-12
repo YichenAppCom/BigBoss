@@ -11,7 +11,7 @@ import android.widget.EditText;
 import com.yichenapp.apisdk.data.UserInfo;
 import com.yichenapp.apisdk.utils.LoginUtils;
 import com.yichenapp.bigboss.R;
-import com.yichenapp.bussiness.base.BaseActivity;
+import com.yichenapp.bigboss.base.BaseBigBossActivity;
 import com.yichenapp.core.utils.TraceLog;
 
 import cn.bmob.v3.exception.BmobException;
@@ -21,7 +21,7 @@ import cn.bmob.v3.listener.LogInListener;
 /**
  * Created by Administrator on 2017/2/19 0019.
  */
-public class LoginActivity extends BaseActivity implements View.OnClickListener {
+public class LoginActivity extends BaseBigBossActivity implements View.OnClickListener {
 
     EditText accountEdit;
     EditText pwdEdit;

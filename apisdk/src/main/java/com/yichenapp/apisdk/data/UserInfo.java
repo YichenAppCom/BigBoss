@@ -7,43 +7,11 @@ import cn.bmob.v3.BmobUser;
  */
 public class UserInfo extends BmobUser
 {
-    private Boolean sex;
-
-    public String getAge() {
-        return age;
-    }
-
-    public void setAge(String age) {
-        this.age = age;
-    }
-
-    private String age;
-
-    public Boolean getSex() {
-        return sex;
-    }
-
-    public void setSex(Boolean sex) {
-        this.sex = sex;
-    }
-
     public String getNickname() {
         return nickname;
     }
-
     public void setNickname(String nickname) {
         this.nickname = nickname;
     }
-
     private String nickname;
-
-    private VipLevel vipLevel;
-
-    public VipLevel getVipLevel() {
-        return vipLevel;
-    }
-
-    public void setVipLevel(VipLevel vipLevel) {
-        this.vipLevel = vipLevel;
-    }
 }

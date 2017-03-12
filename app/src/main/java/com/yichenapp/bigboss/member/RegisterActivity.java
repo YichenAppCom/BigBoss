@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.yichenapp.bigboss.R;
-import com.yichenapp.bussiness.base.BaseActivity;
+import com.yichenapp.bigboss.base.BaseBigBossActivity;
 import com.yichenapp.bussiness.member.register.IRegisterView;
 import com.yichenapp.bussiness.member.register.RegisterPresenterImpl;
 
@@ -21,7 +21,7 @@ import cn.bmob.v3.exception.BmobException;
 /**
  * Created by Administrator on 2017/2/19 0019.
  */
-public class RegisterActivity extends BaseActivity implements IRegisterView {
+public class RegisterActivity extends BaseBigBossActivity implements IRegisterView {
     @BindView(R.id.account_edit)
     EditText accountEdit;
     @BindView(R.id.pwd_edit)

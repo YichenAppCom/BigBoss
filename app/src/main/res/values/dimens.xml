@@ -4,4 +4,7 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="member_account_padding">10dp</dimen>
     <dimen name="member_account_margintop">50dp</dimen>
+    <dimen name="member_center_margin_left">10dp</dimen>
+    <dimen name="member_center_margin_Right">10dp</dimen>
+    <dimen name="member_center_margin_Top">20dp</dimen>
 </resources>

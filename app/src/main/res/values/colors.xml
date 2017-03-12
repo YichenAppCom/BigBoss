@@ -5,4 +5,7 @@
     <color name="colorAccent">#FF4081</color>
     <color name="transparent">#00000000</color>
     <color name="themeBackground">#3F51B5</color>
+    <color name="white">#ffffff</color>
+    <color name="color_title">#66FF0000</color>
+    <color name="color_member_item">#66FFFFFF</color>
 </resources>
